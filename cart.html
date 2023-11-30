@@ -3,12 +3,13 @@
 * Template Author: Untree.co
 * Author URI: https://untree.co/
 * License: https://creativecommons.org/licenses/by/3.0/
-*/ -->
+*/ --><script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
 <!doctype html>
 <html lang="en">
 
 <head>
-<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -418,31 +419,32 @@
   <script src="js/aos.js"></script>
   <script src="js/custom.js"></script>
 <script>
-  new Vue({
-    el: '#app',
-    data: {
-      cart: [
-        { id: 1, name: 'Top Up T-Shirt', price: 49.00, quantity: 1 },
-        { id: 2, name: 'Polo Shirt', price: 49.00, quantity: 1 }
-        // Add more items as needed
-      ]
-    },
-    methods: {
-      updateQuantity(item, amount) {
-        item.quantity += amount;
-        if (item.quantity < 1) {
-          item.quantity = 1;
+    // Move your Vue.js code inside the script tag
+    new Vue({
+      el: '#app',
+      data: {
+        cart: [
+          { id: 1, name: 'Top Up T-Shirt', price: 49.00, quantity: 1 },
+          { id: 2, name: 'Polo Shirt', price: 49.00, quantity: 1 }
+          // Add more items as needed
+        ]
+      },
+      methods: {
+        updateQuantity(item, amount) {
+          item.quantity += amount;
+          if (item.quantity < 1) {
+            item.quantity = 1;
+          }
+        },
+        removeItem(index) {
+          this.cart.splice(index, 1);
+        },
+        calculateTotal() {
+          return this.cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
         }
-      },
-      removeItem(index) {
-        this.cart.splice(index, 1);
-      },
-      calculateTotal() {
-        return this.cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
       }
-    }
-  });
-</script>
+    });
+  </script>
 
   
 </body>
