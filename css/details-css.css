@@ -1,0 +1,19 @@
+/* Add your styles for the product details here */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .product-details {
+    max-width: 600px;
+    margin: 100px auto;
+    text-align: center;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
