@@ -359,4 +359,20 @@ $(function(){
 	};
 	sitePlusMinus();
 
+
+	document.addEventListener("DOMContentLoaded", function () {
+		var addToCartBtn = document.getElementById("addToCartBtn");
+		var cartMessage = document.getElementById("cartMessage");
+	
+		addToCartBtn.addEventListener("click", function () {
+			// Show the pop-up message
+			cartMessage.style.display = "block";
+	
+			// Hide the pop-up message after 2 seconds (adjust as needed)
+			setTimeout(function () {
+				cartMessage.style.display = "none";
+			}, 2000);
+		});
+	});
+
 })
